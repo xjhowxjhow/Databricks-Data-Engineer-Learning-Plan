@@ -10,19 +10,33 @@ PARTITIONED BY(ano,mes)
 AS 
 SELECT
   a.*,
-  --Colunas Metadados
+  -- Colunas Metadados
   _metadata,
   _metadata.file_path,
   _metadata.file_modification_time,
   _metadata.file_size,
   _metadata.file_block_start,
-  year(to_date(a.`DATA DE GERAÇÃO`, 'yyyy-MM-dd')) AS ano,
-  month(to_date(a.`DATA DE GERAÇÃO`, 'yyyy-MM-dd')) AS mes
+  year(a.data_de_geracao) AS ano,
+  month(a.data_de_geracao) AS mes
 FROM STREAM
   read_files(
-    '/Volumes/dev/lakeflow/files/raw/DEVEDORES_DIVIDA_ATIVA*',
-    format => 'csv',
-    header => true,
-    inferSchema => true,
-    sep => ';'
+    '/Volumes/dev/lakeflow/files/raw/DEVEDORES_DIVIDA_ATIVA-2025-06*',
+    format       => 'csv',
+    header       => true,
+    dateFormat   => 'dd/mm/yyyy',
+    schema       => 'data_de_geracao date,
+                     cpf_cnpj_devedor string,
+                     tipo_pessoa string,
+                     tipo_devedor string,
+                     nome_devedor string,
+                     numero_termo_inscricao string,
+                     data_da_inscricao string,
+                     sequencial_credito string,
+                     situacao_credito string,
+                     motivo_suspensao string,
+                     origem string,
+                     credor string,
+                     saldo_devedor_sem_honorarios string,
+                     observacao string',
+    sep          => ';'
   ) a
