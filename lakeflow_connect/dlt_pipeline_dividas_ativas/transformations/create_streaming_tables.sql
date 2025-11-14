@@ -1,4 +1,4 @@
-CREATE OR REFRESH STREAMING TABLE dev.lakeflow.dim_devedores_bronze
+CREATE OR REFRESH STREAMING TABLE dev.dividas.dim_devedores_bronze
 COMMENT 'BRONZE: Armazenamento dos devedores sem tratamento'
 TBLPROPERTIES (
   -- 'delta.appendOnly' = 'true',
@@ -39,4 +39,4 @@ FROM STREAM
                      saldo_devedor_sem_honorarios string,
                      observacao string',
     sep          => ';'
-  ) a
+  ) a;
