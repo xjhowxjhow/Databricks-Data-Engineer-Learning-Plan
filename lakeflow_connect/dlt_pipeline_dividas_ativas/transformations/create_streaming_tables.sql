@@ -20,7 +20,7 @@ SELECT
   month(a.data_de_geracao) AS mes
 FROM STREAM
   read_files(
-    '/Volumes/dev/lakeflow/files/raw/DEVEDORES_DIVIDA_ATIVA*',
+    '/Volumes/dev/dividas/files/raw/DEVEDORES_DIVIDA_ATIVA*',
     format       => 'csv',
     header       => true,
     dateFormat   => 'dd/mm/yyyy',
