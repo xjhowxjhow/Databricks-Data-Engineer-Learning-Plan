@@ -1,6 +1,7 @@
 # dividas_ativas
 
 Pipeline DLT responsável por ingerir, tratar e disponibilizar dados de Devedores da Dívida Ativa no Lakehouse da Databricks.
+os dados obtidos sao publicos disponibilizado Banco central ex: https://www.bcb.gov.br/conteudo/dadosabertos/BCBPGBCB/DEVEDORES_DIVIDA_ATIVA-2025-06.csv
 
 ## Visão geral do pipeline
 
