@@ -1,4 +1,4 @@
-CREATE OR REFRESH MATERIALIZED VIEW dev.dividas.gold_devedores
+CREATE OR REFRESH MATERIALIZED VIEW dev.dividas.devedores_gold
 COMMENT "GOLD: Materialized View detalhada para analytics, com refresh incremental automático"
 TBLPROPERTIES(
       'quality' = 'gold'
