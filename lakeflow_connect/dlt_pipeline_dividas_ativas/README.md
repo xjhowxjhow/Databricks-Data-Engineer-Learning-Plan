@@ -1,20 +1,45 @@
 # dividas_ativas
 
-This folder defines all source code for the 'dividas_ativas' pipeline:
+Pipeline DLT responsável por ingerir, tratar e disponibilizar dados de Devedores da Dívida Ativa no Lakehouse da Databricks.
 
-- `explorations`: Ad-hoc notebooks used to explore the data processed by this pipeline.
-- `transformations`: All dataset definitions and transformations.
+## Visão geral do pipeline
 
-## Getting Started
+![Pipeline Graph](src/img/pipeline_graph.png)
 
-To get started, go to the `transformations` folder -- most of the relevant source code lives there:
+## Estrutura
 
-* By convention, every dataset under `transformations` is in a separate file.
-* Take a look at the sample under "sample_users_dividas_ativas.sql" to get familiar with the syntax.
-  Read more about the syntax at https://docs.databricks.com/dlt/sql-ref.html.
-* Use `Run file` to run and preview a single transformation.
-* Use `Run pipeline` to run _all_ transformations in the entire pipeline.
-* Use `+ Add` in the file browser to add a new data set definition.
-* Use `Schedule` to run the pipeline on a schedule!
+- **configuration/**  
+  Scripts iniciais de configuração e validação do ambiente.
 
-For more tutorials and reference material, see https://docs.databricks.com/dlt.
+- **explorations/**  
+  Notebooks e consultas auxiliares.
+
+- **src/img/**  
+  Imagens usadas na documentação.  
+  Exemplos:
+  
+  - Estrutura da pasta Raw (streaming):
+    ![Raw folder](src/img/raw_folder_streaming.png)
+
+  - Visualização de arquivos ingeridos:
+    ![Audit Streaming Files](src/img/audit_streaming_files_view.png)
+
+- **transformations/**  
+  Contém as transformações principais:
+  - `bronze_devedores.sql`
+  - `silver_devedores.sql`
+  - `gold_devedores.sql`
+  - `audit.sql`
+
+## Como funciona
+
+O pipeline segue o fluxo padrão do Lakehouse:
+
+**Bronze → Silver → Gold**
+
+- Bronze lê arquivos crus e adiciona metadados.  
+- Silver trata, normaliza e valida os dados.  
+- Gold consolida e estrutura informações para consumo analítico.  
+- A auditoria registra os arquivos processados e auxilia no monitoramento.
+
+Este projeto serve como base para ingestão contínua via Delta Live Tables e disponibilização dos dados para BI e análises operacionais.
