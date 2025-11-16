@@ -19,9 +19,11 @@ Pipeline DLT responsável por ingerir, tratar e disponibilizar dados de Devedore
   Exemplos:
   
   - Estrutura da pasta Raw (streaming):
-    ![Raw folder](src/img/raw_folder_streaming.png)
+
+    ![Raw folder](src/img/raw_streaming.png)
 
   - Visualização de arquivos ingeridos:
+
     ![Audit Streaming Files](src/img/audit_streaming_files_view.png)
 
 - **transformations/**  
@@ -37,7 +39,7 @@ O pipeline segue o fluxo padrão do Lakehouse:
 
 **Bronze → Silver → Gold**
 
-- Bronze lê arquivos crus e adiciona metadados.  
+- Bronze lê arquivos raw adicionados no UC /Volumes e adiciona metadados.  
 - Silver trata, normaliza e valida os dados.  
 - Gold consolida e estrutura informações para consumo analítico.  
 - A auditoria registra os arquivos processados e auxilia no monitoramento.
