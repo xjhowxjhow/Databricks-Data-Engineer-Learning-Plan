@@ -13,8 +13,8 @@
 
 -- COMMAND ----------
 
-USE CATALOG `dev`;
-USE SCHEMA `dividas`;
+USE CATALOG dev;
+USE SCHEMA dividas;
 
 -- COMMAND ----------
 
