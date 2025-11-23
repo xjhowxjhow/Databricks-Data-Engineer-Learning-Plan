@@ -27,7 +27,7 @@ targets:
       host: https://dbc-a2e0d313-2642.cloud.databricks.com
     variables:
       catalog: dev
-      schema: dev
+      schema: dividas
   prod:
     mode: production
     workspace:
@@ -35,8 +35,8 @@ targets:
       # We explicitly deploy to /Workspace/Users/pcgamer8400gs@gmail.com to make sure we only have a single copy.
       root_path: /Workspace/Users/pcgamer8400gs@gmail.com/.bundle/${bundle.name}/${bundle.target}
     variables:
-      catalog: dev
-      schema: prod
+      catalog: prd
+      schema: dividas
     permissions:
       - user_name: pcgamer8400gs@gmail.com
         level: CAN_MANAGE
