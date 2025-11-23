@@ -1,3 +1,26 @@
+# lakeflow_dividas_ativas_dtl
+
+This folder defines all source code for the lakeflow_dividas_ativas_dtl pipeline:
+
+- `explorations/`: Ad-hoc notebooks used to explore the data processed by this pipeline.
+- `transformations/`: All dataset definitions and transformations.
+- `utilities/` (optional): Utility functions and Python modules used in this pipeline.
+- `data_sources/` (optional): View definitions describing the source data for this pipeline.
+
+## Getting Started
+
+To get started, go to the `transformations` folder -- most of the relevant source code lives there:
+
+* By convention, every dataset under `transformations` is in a separate file.
+* Take a look at the sample called "sample_trips_lakeflow_dividas_ativas_dtl.py" to get familiar with the syntax.
+  Read more about the syntax at https://docs.databricks.com/dlt/python-ref.html.
+* If you're using the workspace UI, use `Run file` to run and preview a single transformation.
+* If you're using the CLI, use `databricks bundle run lakeflow_dividas_ativas_dtl_etl --select sample_trips_lakeflow_dividas_ativas_dtl` to run a single transformation.
+
+For more tutorials and reference material, see https://docs.databricks.com/dlt.
+
+
+
 # dividas_ativas
 
 Pipeline DLT responsável por ingerir, tratar e disponibilizar dados de **Devedores da Dívida Ativa** no Lakehouse da Databricks.  
@@ -8,7 +31,7 @@ https://www.bcb.gov.br/conteudo/dadosabertos/BCBPGBCB/DEVEDORES_DIVIDA_ATIVA-202
 
 ## Visão geral do pipeline
 
-![Pipeline Graph](src/img/pipeline_graph.png)
+![Pipeline Graph](doc/img/pipeline_graph.png)
 
 ---
 
@@ -24,10 +47,10 @@ Notebooks e consultas auxiliares para análise dos dados processados.
 Imagens utilizadas na documentação.
 
 - Estrutura da pasta Raw utilizada no streaming:  
-  ![Raw folder](src/img/raw_streaming.png)
+  ![Raw folder](doc/img/raw_streaming.png)
 
 - Visualização de arquivos ingeridos pelo Auto Loader:  
-  ![Audit Streaming Files](src/img/audit_streaming_files_view.png)
+  ![Audit Streaming Files](doc/img/audit_streaming_files_view.png)
 
 ### **transformations/**
 Transformações do pipeline Delta Live Tables:
@@ -67,3 +90,4 @@ O pipeline segue o fluxo padrão do Lakehouse:
 ---
 
 Este projeto serve como base para ingestão contínua via **Delta Live Tables**, entregando dados confiáveis e prontos para análises, dashboards e integrações operacionais.
+
