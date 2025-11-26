@@ -1,29 +1,11 @@
-# lakeflow_dividas_ativas_dtl
-
-This folder defines all source code for the lakeflow_dividas_ativas_dtl pipeline:
-
-- `explorations/`: Ad-hoc notebooks used to explore the data processed by this pipeline.
-- `transformations/`: All dataset definitions and transformations.
-- `utilities/` (optional): Utility functions and Python modules used in this pipeline.
-- `data_sources/` (optional): View definitions describing the source data for this pipeline.
-
-## Getting Started
-
-To get started, go to the `transformations` folder -- most of the relevant source code lives there:
-
-* By convention, every dataset under `transformations` is in a separate file.
-* Take a look at the sample called "sample_trips_lakeflow_dividas_ativas_dtl.py" to get familiar with the syntax.
-  Read more about the syntax at https://docs.databricks.com/dlt/python-ref.html.
-* If you're using the workspace UI, use `Run file` to run and preview a single transformation.
-* If you're using the CLI, use `databricks bundle run lakeflow_dividas_ativas_dtl_etl --select sample_trips_lakeflow_dividas_ativas_dtl` to run a single transformation.
-
-For more tutorials and reference material, see https://docs.databricks.com/dlt.
+# Lakeflow Spark Declarative Pipelines (SDP) / DLT (old) 
 
 
 
-# dividas_ativas
+# Devedores Dividas Ativas Banco Central
 
-Pipeline DLT responsável por ingerir, tratar e disponibilizar dados de **Devedores da Dívida Ativa** no Lakehouse da Databricks.  
+O objetivo deste projeto é implementar um pipeline (SDP) responsável por ingerir, processar e disponibilizar dados no Lakehouse da plataforma Databricks, utilizando uma arquitetura de dados em Medalhação (Bronze, Silver e Gold). A ingestão é realizada de forma automatizada através do Auto Loader.
+
 Os dados processados são **públicos**, disponibilizados pelo Banco Central, por exemplo:  
 https://www.bcb.gov.br/conteudo/dadosabertos/BCBPGBCB/DEVEDORES_DIVIDA_ATIVA-2025-06.csv
 
@@ -39,7 +21,6 @@ https://www.bcb.gov.br/conteudo/dadosabertos/BCBPGBCB/DEVEDORES_DIVIDA_ATIVA-202
 
 ### **config/**
 Scripts de preparação e validação do ambiente.
-
 
 ### **explorations/**
 Notebooks e consultas auxiliares para análise dos dados processados.
