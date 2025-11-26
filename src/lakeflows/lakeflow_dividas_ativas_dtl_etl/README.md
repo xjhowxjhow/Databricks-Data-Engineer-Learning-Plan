@@ -37,13 +37,14 @@ https://www.bcb.gov.br/conteudo/dadosabertos/BCBPGBCB/DEVEDORES_DIVIDA_ATIVA-202
 
 ## Estrutura do Projeto
 
-### **configuration/**
+### **config/**
 Scripts de preparação e validação do ambiente.
+
 
 ### **explorations/**
 Notebooks e consultas auxiliares para análise dos dados processados.
 
-### **src/img/**
+### **doc**
 Imagens utilizadas na documentação.
 
 - Estrutura da pasta Raw utilizada no streaming:  
@@ -69,6 +70,15 @@ Transformações do pipeline Delta Live Tables:
 
 ---
 
+### **utilities/**
+Utilidades/Recursos do Pipeline:
+
+- **`/functions/remove_acentos.sql`**  
+  Funcao reutilizável no lakehouse, ideal para ter a query mais limpa.
+
+- **`/download_files.ipynb`**  
+  Notebook python para download dos CSVs disponibilizados para testar o Auto Loader.
+
 ## Como funciona
 
 O pipeline segue o fluxo padrão do Lakehouse:
@@ -89,5 +99,6 @@ O pipeline segue o fluxo padrão do Lakehouse:
 
 ---
 
-Este projeto serve como base para ingestão contínua via **Delta Live Tables**, entregando dados confiáveis e prontos para análises, dashboards e integrações operacionais.
+- Estrutura final do Lakehouse  
+  ![Raw folder](doc/img/estrutura_lakehouse.png)
 
