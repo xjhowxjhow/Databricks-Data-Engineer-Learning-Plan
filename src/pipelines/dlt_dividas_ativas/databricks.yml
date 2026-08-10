@@ -1,0 +1,15 @@
+bundle:
+  name: dlt_dividas_ativas
+
+resources:
+  pipelines:
+    dlt_dividas_ativas:
+      name: dlt_dividas_ativas
+
+      catalog: dev
+      schema: dividas_ativas
+
+      libraries:
+        - glob:
+            include:
+              - transformations/**/*.sql
