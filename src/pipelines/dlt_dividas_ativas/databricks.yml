@@ -6,10 +6,11 @@ resources:
     dlt_dividas_ativas:
       name: dlt_dividas_ativas
 
+      serverless: true
+
       catalog: dev
       schema: dividas_ativas
 
       libraries:
         - glob:
-            include:
-              - transformations/**/*.sql
+            include: transformations/**
