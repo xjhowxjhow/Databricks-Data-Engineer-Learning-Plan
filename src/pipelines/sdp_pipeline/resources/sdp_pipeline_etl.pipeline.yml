@@ -1,0 +1,22 @@
+# The main pipeline for sdp_pipeline
+
+resources:
+  pipelines:
+    sdp_pipeline_etl:
+      name: sdp_pipeline_etl
+      catalog: ${var.catalog}
+      schema: ${var.schema}
+      serverless: true
+      root_path: "../src/sdp_pipeline_etl"
+      development: true
+      photon: true
+      channel: current
+      continuous: false
+
+      configuration:
+        orders_volume_path: /Volumes/dev/pipelines_sdp/files/orders/
+        customers_volume_path: /Volumes/dev/pipelines_sdp/files/customers/
+
+      libraries:
+        - glob:
+            include: ../src/sdp_pipeline_etl/transformations/**

@@ -14,7 +14,7 @@ AS
 SELECT
     *
 FROM STREAM read_files(
-    '/Volumes/dev/pipelines_sdp/files/customers/',
+    '${customers_volume_path}',
     format => 'json'
 );
 
