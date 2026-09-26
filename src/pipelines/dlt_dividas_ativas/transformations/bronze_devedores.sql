@@ -1,5 +1,5 @@
 CREATE OR REFRESH STREAMING TABLE dev.dividas.devedores_bronze
-COMMENT 'BRONZE: Ingestão bruta dos devedores (Auto Loader)'
+COMMENT 'BRONZE: Ingestão bruta dos devedores (Autohttps://dbc-a2e0d313-2642.cloud.databricks.com/browse/folders/1072583980767780?o=4088237958630064$0 Loader)'
 TBLPROPERTIES (
   'delta.autoOptimize.optimizeWrite' = 'true',
   'delta.autoOptimize.autoCompact' = 'true',
